@@ -115,18 +115,18 @@ export default function TextForm(props) {
                     <textarea className="form-control" value={text} style={{ backgroundColor: 'grey', color: 'white' }} onChange={evenhandler} id="textarea" rows="8"></textarea>
                 </div>
                 <div className="container">
-                    <button className="btn btn-primary mx-1 my-2" onClick={convertToupCase}>Convert to UpperCase</button>
-                    <button className="btn btn-primary mx-1 my-2" onClick={convertToloCase}>Convert to LowerCase</button>
-                    <button className="btn btn-primary mx-1 my-2" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
-                    <button className="btn btn-primary mx-1 my-2" onClick={capitalizeSentences}>capitalize</button>
-                    <button className="btn btn-primary mx-1 my-2" onClick={handleCopy}>copy</button>
-                    <button className="btn btn-primary mx-1 my-2" onClick={LoremGen}>LoremIpsum-text Generetor</button>
-                    <button className="btn btn-primary mx-1 my-2" onClick={RnameGen}>Generate Random Name</button>
-                    <button className="btn btn-primary mx-1 my-2" onClick={urlEncode}>Encode URL</button>
-                    <button className="btn btn-primary mx-1 my-2" onClick={urlDecode}>Decode URL</button>
-                    <button className="btn btn-primary mx-1 my-2" onClick={generateRandomPassword}>Random Password</button>
-                    <button className="btn btn-primary mx-1 my-2" onClick={generateRandomEmail}>Random E-mail</button>
-                    <button className="btn btn-danger mx-1 my-2" onClick={() => {
+                    <button className="btn btn-primary mx-1 my-1" onClick={convertToupCase}>Convert to UpperCase</button>
+                    <button className="btn btn-primary mx-1 my-1" onClick={convertToloCase}>Convert to LowerCase</button>
+                    <button className="btn btn-primary mx-1 my-1" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+                    <button className="btn btn-primary mx-1 my-1" onClick={capitalizeSentences}>capitalize</button>
+                    <button className="btn btn-primary mx-1 my-1" onClick={handleCopy}>copy</button>
+                    <button className="btn btn-primary mx-1 my-1" onClick={LoremGen}>LoremIpsum-text Generetor</button>
+                    <button className="btn btn-primary mx-1 my-1" onClick={RnameGen}>Generate Random Name</button>
+                    <button className="btn btn-primary mx-1 my-1" onClick={urlEncode}>Encode URL</button>
+                    <button className="btn btn-primary mx-1 my-1" onClick={urlDecode}>Decode URL</button>
+                    <button className="btn btn-primary mx-1 my-1" onClick={generateRandomPassword}>Random Password</button>
+                    <button className="btn btn-primary mx-1 my-1" onClick={generateRandomEmail}>Random E-mail</button>
+                    <button className="btn btn-danger mx-1 my-1" onClick={() => {
                         setText('')
                         props.showAlert("Text Removed", "danger")
                     }}>Clear</button>
