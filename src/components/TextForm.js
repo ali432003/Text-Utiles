@@ -78,33 +78,38 @@ export default function TextForm(props) {
         props.showAlert("URL Decoded!", "success");
     }
     const generateRandomPassword = () => {
-        let length= parseInt(prompt("Enter Length of Password"))
+        let length = parseInt(prompt("Enter Length of Password"))
         const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()';
         let password = '';
-      
+
         for (let i = 0; i < length; i++) {
-          const randomIndex = Math.floor(Math.random() * characters.length);
-          password += characters[randomIndex];
+            const randomIndex = Math.floor(Math.random() * characters.length);
+            password += characters[randomIndex];
         }
-      
+
         setText(password);
-        props.showAlert("Random Password Generated","primary")
-      };
-      const generateRandomEmail = () => {
+        props.showAlert("Random Password Generated", "primary")
+    };
+    const generateRandomEmail = () => {
         let domain = prompt("Enter Domain Name Like gmail, hotmail etc")
         const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
         let email = '';
-      
+
         for (let i = 0; i < 10; i++) {
-          const randomIndex = Math.floor(Math.random() * characters.length);
-          email += characters[randomIndex];
+            const randomIndex = Math.floor(Math.random() * characters.length);
+            email += characters[randomIndex];
         }
-      
+
         email += `@${domain}.com`;
-      
+
         setText(email);
-        props.showAlert("Random Email Generated","info")
-      };  
+        props.showAlert("Random Email Generated", "info")
+    };
+    const textTospeech = () => {
+        const speech = new SpeechSynthesisUtterance();
+        speech.text = text;
+        window.speechSynthesis.speak(speech);
+    }
 
 
     return (
@@ -126,6 +131,7 @@ export default function TextForm(props) {
                     <button className="btn btn-primary mx-1 my-1" onClick={urlDecode}>Decode URL</button>
                     <button className="btn btn-primary mx-1 my-1" onClick={generateRandomPassword}>Random Password</button>
                     <button className="btn btn-primary mx-1 my-1" onClick={generateRandomEmail}>Random E-mail</button>
+                    <button className="btn btn-primary mx-1 my-1" onClick={textTospeech}>Speak text</button>
                     <button className="btn btn-danger mx-1 my-1" onClick={() => {
                         setText('')
                         props.showAlert("Text Removed", "danger")
